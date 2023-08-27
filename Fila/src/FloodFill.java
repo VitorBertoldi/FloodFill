@@ -12,9 +12,9 @@ public class FloodFill {
         int mod = 1;
 
         while(!pilha.isEmpty()) {
-            int[] curr = pilha.top();
-            int i = curr[0];
-            int j = curr[1];
+            int[] c = pilha.top();
+            int i = c[0];
+            int j = c[1];
             pilha.pop();
             if (matriz[i][j] == coordenadasAtuais) {
                 matriz[i][j] = novaCor;
