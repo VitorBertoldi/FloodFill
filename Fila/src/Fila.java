@@ -1,17 +1,17 @@
-public class Fila {
-    private int[] values;
+public class Fila<T> {
+    private T[] values;
     private int   first;
     private int   reference;
     private int   last;
     private int   total;
-    public Fila() {
-        values = new int[100];
+    public Fila(int tamanho) {
+        values = (T[]) new Object[tamanho];
         first  = 0;
         last   = 0;
         total  = 0;
         reference = 0;
     }
-    public void insert(int e) {
+    public void insert(T e) {
         if (isFull()) {
             throw new RuntimeException("Fila cheia");
         }
@@ -20,11 +20,11 @@ public class Fila {
         reference = last;
         total++;
     }
-    public int remove() {
+    public T remove() {
         if (isEmpty()) {
             throw new RuntimeException("Fila vazia");
         }
-        int e = values[first];
+        T e = values[first];
         int i = 0;
         while (reference != 0) {
             values[first + i] = values[first + 1 + i];
@@ -39,7 +39,20 @@ public class Fila {
     public boolean isEmpty() {
         return (total == 0);
     }
+
+    public T[] getValues() {
+        return values;
+    }
+
     public boolean isFull() {
         return total == values.length;
+    }
+    public void impressao(int[][] matriz) {
+        for (int l = 0; l < matriz.length; l++)  {
+            for (int c = 0; c < matriz[0].length; c++)  {
+                System.out.print(matriz[l][c] + " ");
+            }
+            System.out.println(" ");
+        }
     }
 }

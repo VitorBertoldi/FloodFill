@@ -1,7 +1,7 @@
 public class FloodFill {
     public int[][] floodFill(int[][] matriz, int linhaInicial, int colunaInicial,int cor, int novaCor) {
-        GenericStack<int[]> pilha = new GenericStack<>(100);
-        GenericFila<int[][]> fila = new GenericFila<>(100);
+        Pilha<int[]> pilha = new Pilha<>(100);
+        Fila<int[][]> fila = new Fila<>(100);
 
         int m = matriz.length;
         int n = matriz[0].length;
