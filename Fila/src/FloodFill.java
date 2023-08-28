@@ -6,7 +6,7 @@ public class FloodFill {
         int m = matriz.length;
         int n = matriz[0].length;
 
-        int coordenadasAtuais = matriz[linhaInicial][colunaInicial];
+        int coordenadasInicial = matriz[linhaInicial][colunaInicial];
 
         pilha.push(new int[]{linhaInicial, colunaInicial});
         int mod = 1;
@@ -16,7 +16,7 @@ public class FloodFill {
             int i = c[0];
             int j = c[1];
             pilha.pop();
-            if (matriz[i][j] == coordenadasAtuais) {
+            if (matriz[i][j] == coordenadasInicial) {
                 matriz[i][j] = novaCor;
                 if (i + 1 < m & matriz[i][j] != cor)
                     pilha.push(new int[]{i + 1, j});
@@ -30,17 +30,14 @@ public class FloodFill {
                 int[][] value;
                 value = fila.remove();
                 impressao(value);
+                System.out.println(pilha.toString());
                 System.out.println("modificacao numero " + mod);
                 System.out.println("---------------------");
                 mod++;
                 }
-
         }
-
-
-
         return matriz;
-        }
+    }
     public void impressao(int[][] matriz) {
         for (int l = 0; l < matriz.length; l++)  {
             for (int c = 0; c < matriz[0].length; c++)  {
@@ -49,5 +46,5 @@ public class FloodFill {
             System.out.println(" ");
         }
     }
-    }
+}
 

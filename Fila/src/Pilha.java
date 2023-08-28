@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pilha<T> {
     private T[] stackValues;
     private int top;
@@ -34,6 +36,15 @@ public class Pilha<T> {
         if (isEmpty()) return null;
         return stackValues[top];
     }
+
+    @Override
+    public String toString() {
+        return "Pilha{" +
+                "stackValues=" + Arrays.toString(stackValues) +
+                ", top=" + top +
+                '}';
+    }
+
     public int size() {
 
         return top+1;

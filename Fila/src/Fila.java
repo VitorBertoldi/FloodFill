@@ -40,19 +40,8 @@ public class Fila<T> {
         return (total == 0);
     }
 
-    public T[] getValues() {
-        return values;
-    }
-
     public boolean isFull() {
         return total == values.length;
     }
-    public void impressao(int[][] matriz) {
-        for (int l = 0; l < matriz.length; l++)  {
-            for (int c = 0; c < matriz[0].length; c++)  {
-                System.out.print(matriz[l][c] + " ");
-            }
-            System.out.println(" ");
-        }
-    }
+
 }

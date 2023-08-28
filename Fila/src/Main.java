@@ -15,7 +15,7 @@ public class Main {
                 {0,1,1,1,1,1,1,1,1,1}
         };
 
-        flood.floodFill(matriz, 2,2,1,2);
+        flood.floodFill(matriz, 8,8,1,2);
 
     }
 }
